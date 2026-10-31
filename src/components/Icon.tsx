@@ -1,0 +1,60 @@
+import {
+  Activity,
+  Award,
+  Building2,
+  ChartColumn,
+  ClipboardList,
+  Clock,
+  Cloud,
+  Compass,
+  FileCheck2,
+  Globe,
+  GraduationCap,
+  Handshake,
+  HeartHandshake,
+  Landmark,
+  Layers,
+  Lightbulb,
+  Lock,
+  Search,
+  Settings,
+  ShieldCheck,
+  Sparkles,
+  Target,
+  TrendingUp,
+  Users,
+  type LucideIcon,
+} from "lucide-react";
+import type { IconName } from "@/data/content";
+
+const map: Record<IconName, LucideIcon> = {
+  building: Building2,
+  heartHandshake: HeartHandshake,
+  globe: Globe,
+  landmark: Landmark,
+  fileCheck: FileCheck2,
+  clipboard: ClipboardList,
+  cloud: Cloud,
+  chart: ChartColumn,
+  graduation: GraduationCap,
+  target: Target,
+  shield: ShieldCheck,
+  search: Search,
+  trending: TrendingUp,
+  compass: Compass,
+  settings: Settings,
+  activity: Activity,
+  handshake: Handshake,
+  sparkles: Sparkles,
+  users: Users,
+  clock: Clock,
+  lock: Lock,
+  layers: Layers,
+  lightbulb: Lightbulb,
+  award: Award,
+};
+
+export default function Icon({ name, className = "h-6 w-6" }: { name: IconName; className?: string }) {
+  const Cmp = map[name];
+  return <Cmp className={className} aria-hidden="true" strokeWidth={1.75} />;
+}

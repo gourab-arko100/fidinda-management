@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Brand colours (official):
+   Deep Navy / Dark Indigo #1C095A — RGB 28,9,90 — C69 M90 Y0 K65 (main text, logo lines)
+   Bright Red #E1041C — RGB 225,4,28 — C0 M98 Y88 K12 (highlights, accents) */
+
+/* ------------------------------------------------------------------
+   THEME TOKENS (RGB channels, used by tailwind.config.ts colours)
+   Light theme = :root. Dark theme = html.dark — only the values change,
+   so every element switches together.
+   ------------------------------------------------------------------ */
+@layer base {
+  :root {
+    --c-canvas: 255 255 255;   /* page background */
+    --c-surface: 255 255 255;  /* cards, header, menus */
+    --c-mist: 245 244 250;     /* soft sections, inputs */
+    --c-heading: 28 9 90;      /* #1C095A headings & main text */
+    --c-ink: 74 69 102;        /* body copy */
+    --c-line: 28 9 90;         /* borders (used with opacity) */
+    --c-tint: 243 241 250;     /* light navy tint */
+    --c-red-soft: 253 236 238; /* light red tint */
+  }
+  html.dark {
+    color-scheme: dark;
+    --c-canvas: 11 3 40;       /* deep shade of brand navy */
+    --c-surface: 21 8 69;
+    --c-mist: 16 5 58;
+    --c-heading: 255 255 255;
+    --c-ink: 201 195 230;
+    --c-line: 255 255 255;
+    --c-tint: 35 22 92;
+    --c-red-soft: 58 9 56;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-canvas font-sans text-heading antialiased transition-colors duration-300;
+    font-feature-settings: "ss01", "cv11";
+  }
+  ::selection {
+    @apply bg-brand-red text-white;
+  }
+  :focus-visible {
+    outline: 3px solid #e1041c;
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply relative inline-flex px-3.5 py-2 text-[15px] font-semibold text-heading transition-colors hover:text-brand-red;
+  }
+  .nav-link::after {
+    content: "";
+    @apply absolute -bottom-0.5 left-3.5 right-3.5 h-[2px] origin-left scale-x-0 rounded bg-brand-red transition-transform duration-300;
+  }
+  .nav-link:hover::after,
+  .nav-link-active::after {
+    @apply scale-x-100;
+  }
+  .nav-link-active {
+    @apply text-brand-red;
+  }
+  .mobile-link {
+    @apply block rounded-xl px-3 py-3 text-lg font-bold text-heading hover:bg-mist hover:text-brand-red;
+  }
+  .footer-title {
+    @apply mb-6 text-lg font-bold text-white;
+  }
+  .footer-link {
+    @apply text-[15px] text-white/75 transition-colors duration-200 hover:text-white;
+  }
+  .dot-grid {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px);
+    background-size: 22px 22px;
+    mask-image: linear-gradient(to left, black, transparent 70%);
+  }
+  .dot-grid-navy {
+    background-image: radial-gradient(rgb(var(--c-line) / 0.15) 1.2px, transparent 1.2px);
+    background-size: 18px 18px;
+  }
+  .faq summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
