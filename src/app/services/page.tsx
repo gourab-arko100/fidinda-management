@@ -51,7 +51,7 @@ export default function ServicesPage() {
                   />
                   <Photo src={s.image} alt={s.title} width={1100} className="relative aspect-[5/4] rounded-3xl shadow-lift" />
                   <span
-                    className={`absolute -top-6 flex h-20 w-20 items-center justify-center rounded-3xl bg-brand-red text-white shadow-[0_16px_30px_-12px_rgba(225,4,28,0.8)] ${
+                    className={`absolute -top-6 flex h-20 w-20 items-center justify-center rounded-3xl bg-surface text-heading shadow-lift ring-1 ring-line/[0.06] ${
                       flip ? "-right-3 sm:-right-6" : "-left-3 sm:-left-6"
                     }`}
                   >
@@ -60,7 +60,7 @@ export default function ServicesPage() {
                 </Reveal>
 
                 <div className={flip ? "lg:order-1" : ""}>
-                  <p className="text-sm font-extrabold uppercase tracking-[0.2em] text-brand-red">
+                  <p className="text-sm font-extrabold uppercase tracking-[0.2em] text-ink">
                     Service {String(i + 1).padStart(2, "0")}
                   </p>
                   <h2 className="mt-3 text-3xl font-extrabold leading-tight text-heading sm:text-4xl">{s.title}</h2>
@@ -68,7 +68,7 @@ export default function ServicesPage() {
                   <ul className="mt-7 grid gap-3 sm:grid-cols-2">
                     {s.offerings.map((o) => (
                       <li key={o.title} className="flex items-start gap-3 font-semibold text-heading">
-                        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-red text-white">
+                        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-navy-50 text-heading">
                           <Check className="h-3.5 w-3.5" strokeWidth={3} aria-hidden="true" />
                         </span>
                         {o.title}

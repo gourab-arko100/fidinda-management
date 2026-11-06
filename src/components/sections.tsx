@@ -19,13 +19,13 @@ export function ServiceCard({ service, index = 0 }: { service: Service; index?: 
             width={800}
             className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-110"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent" aria-hidden="true" />
+          <div className="absolute inset-0 bg-gradient-to-t from-night/60 via-night/10 to-transparent" aria-hidden="true" />
           <span className="absolute right-5 top-5 rounded-full bg-white/15 px-3 py-1 text-xs font-bold text-white backdrop-blur">
             {String(index + 1).padStart(2, "0")}
           </span>
         </div>
         <div className="relative flex flex-1 flex-col px-7 pb-7">
-          <span className="-mt-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-red text-white shadow-[0_12px_24px_-10px_rgba(225,4,28,0.8)] transition-colors duration-300 group-hover:bg-navy">
+          <span className="-mt-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-surface text-heading shadow-card ring-1 ring-line/[0.06] transition-colors duration-300 group-hover:bg-navy group-hover:text-white">
             <Icon name={service.icon} className="h-7 w-7" />
           </span>
           <h3 className="mt-5 text-xl font-extrabold leading-snug text-heading">{service.title}</h3>
@@ -109,7 +109,7 @@ export function FinancialBanner() {
                 <Calculator className="h-7 w-7" aria-hidden="true" />
               </span>
               <div>
-                <p className="text-sm font-bold uppercase tracking-[0.18em] text-brand-red">Sister division</p>
+                <p className="text-sm font-bold uppercase tracking-[0.18em] text-ink">Sister division</p>
                 <p className="mt-1 text-xl font-extrabold text-heading sm:text-2xl">{b.text}</p>
               </div>
             </div>
@@ -136,10 +136,10 @@ export function CTAStrip({
     <section className="pb-24 pt-4">
       <div className="container">
         <Reveal>
-          <div className="relative isolate overflow-hidden rounded-[2rem] bg-navy px-7 py-14 text-white sm:px-14 lg:py-20">
+          <div className="relative isolate overflow-hidden rounded-[2rem] bg-night px-7 py-14 text-white sm:px-14 lg:py-20">
             <Photo src={images.cta} width={1600} className="absolute inset-0 -z-20" />
-            <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/95 to-navy/70" aria-hidden="true" />
-            <div className="absolute -right-24 -top-24 -z-10 h-72 w-72 rounded-full border-[40px] border-brand-red/25" aria-hidden="true" />
+            <div className="absolute inset-0 -z-10 bg-gradient-to-r from-night/95 via-night/85 to-night/50" aria-hidden="true" />
+            <div className="absolute -right-24 -top-24 -z-10 h-72 w-72 rounded-full border-[40px] border-white/[0.05]" aria-hidden="true" />
             <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">
                 <span className="inline-block h-1.5 w-14 rounded bg-brand-red" aria-hidden="true" />
@@ -174,7 +174,7 @@ export function FAQList({ faqs }: { faqs: { q: string; a: string }[] }) {
         >
           <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-[17px] font-bold text-heading">
             {f.q}
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-navy-50 text-heading transition-all duration-300 group-open:rotate-45 group-open:bg-brand-red group-open:text-white">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-navy-50 text-heading transition-all duration-300 group-open:rotate-45 group-open:bg-navy group-open:text-white">
               <Plus className="h-4 w-4" aria-hidden="true" />
             </span>
           </summary>

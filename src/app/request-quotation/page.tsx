@@ -41,7 +41,7 @@ export default function RequestQuotationPage() {
                   "Once agreed, we get started on your project.",
                 ].map((t, i) => (
                   <li key={i} className="flex gap-4">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-red text-sm font-bold">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/15 text-sm font-bold">
                       {i + 1}
                     </span>
                     <p className="text-white/85">{t}</p>

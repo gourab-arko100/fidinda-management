@@ -23,6 +23,17 @@ import {
   Target,
   TrendingUp,
   Users,
+  Code,
+  Smartphone,
+  CreditCard,
+  MessageCircle,
+  Monitor,
+  Database,
+  ShoppingCart,
+  Wrench,
+  Languages,
+  Banknote,
+  MapPin,
   type LucideIcon,
 } from "lucide-react";
 import type { IconName } from "@/data/content";
@@ -52,6 +63,17 @@ const map: Record<IconName, LucideIcon> = {
   layers: Layers,
   lightbulb: Lightbulb,
   award: Award,
+  code: Code,
+  smartphone: Smartphone,
+  creditCard: CreditCard,
+  message: MessageCircle,
+  monitor: Monitor,
+  database: Database,
+  cart: ShoppingCart,
+  wrench: Wrench,
+  languages: Languages,
+  banknote: Banknote,
+  mapPin: MapPin,
 };
 
 export default function Icon({ name, className = "h-6 w-6" }: { name: IconName; className?: string }) {

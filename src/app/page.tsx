@@ -16,10 +16,10 @@ export default function HomePage() {
   return (
     <>
       {/* ================= 1. HERO ================= */}
-      <section className="relative isolate overflow-hidden bg-navy text-white">
+      <section className="relative isolate overflow-hidden bg-night text-white">
         <Photo src={images.heroCity} width={2000} className="absolute inset-0 -z-20 scale-105" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/[0.93] to-navy/50" aria-hidden="true" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-navy/80 via-transparent to-transparent" aria-hidden="true" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-night/95 via-night/80 to-night/30" aria-hidden="true" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-night/70 via-transparent to-transparent" aria-hidden="true" />
         <div className="dot-grid absolute inset-0 -z-10 opacity-40" aria-hidden="true" />
 
         <div className="container pb-40 pt-20 sm:pt-24 lg:pb-48 lg:pt-28">
@@ -81,7 +81,7 @@ export default function HomePage() {
                       {f.value}
                       {i === 0 && <span className="text-brand-red">.</span>}
                     </p>
-                    <div className="mt-3 h-[3px] w-8 rounded bg-brand-red" aria-hidden="true" />
+                    <div className="mt-3 h-[3px] w-8 rounded bg-white/30" aria-hidden="true" />
                     <p className="mt-3 text-sm font-medium leading-snug text-white/75">{f.label}</p>
                   </li>
                 ))}
@@ -106,12 +106,12 @@ export default function HomePage() {
             <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {audiences.items.map((a, i) => (
                 <Reveal as="li" key={a.title} delay={i * 80}>
-                  <div className="group h-full rounded-2xl bg-mist p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-navy">
-                    <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-surface text-heading shadow-sm transition-colors group-hover:bg-brand-red group-hover:text-white">
+                  <div className="group h-full rounded-2xl bg-mist p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-surface hover:shadow-card">
+                    <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-surface text-heading shadow-sm transition-colors group-hover:bg-navy group-hover:text-white">
                       <Icon name={a.icon} className="h-7 w-7" />
                     </span>
-                    <h3 className="mt-5 text-lg font-extrabold text-heading transition-colors group-hover:text-white">{a.title}</h3>
-                    <p className="mt-2 text-[15px] leading-relaxed text-ink transition-colors group-hover:text-white/75">
+                    <h3 className="mt-5 text-lg font-extrabold text-heading">{a.title}</h3>
+                    <p className="mt-2 text-[15px] leading-relaxed text-ink">
                       {a.description}
                     </p>
                   </div>
@@ -126,17 +126,17 @@ export default function HomePage() {
       <section className="py-24 lg:py-32" aria-labelledby="intro-heading">
         <div className="container grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
           <Reveal className="relative mx-auto w-full max-w-xl lg:max-w-none">
-            <div className="absolute -left-4 -top-4 h-40 w-40 rounded-3xl bg-brand-red sm:-left-6 sm:-top-6" aria-hidden="true" />
+            <div className="absolute -left-4 -top-4 h-40 w-40 rounded-3xl bg-navy-50 sm:-left-6 sm:-top-6" aria-hidden="true" />
             <div className="dot-grid-navy absolute -bottom-8 -right-4 h-40 w-48" aria-hidden="true" />
             <Photo
               src={images.aboutMain}
-              alt="Consultant presenting to a team around a meeting table"
+              alt="Business team discussing a project around a meeting table"
               width={1100}
               className="relative aspect-[4/5] w-[82%] rounded-3xl shadow-lift"
             />
             <Photo
               src={images.aboutSmall}
-              alt="Team discussing a project in a modern office"
+              alt="Two colleagues reviewing information on a phone in an office"
               width={700}
               className="absolute bottom-[-2rem] right-0 aspect-square w-[48%] rounded-3xl border-8 border-canvas shadow-lift"
             />
@@ -159,7 +159,7 @@ export default function HomePage() {
             <ul className="mt-8 grid gap-x-6 gap-y-3 sm:grid-cols-2">
               {intro.points.map((pt) => (
                 <li key={pt} className="flex items-center gap-3 font-semibold text-heading">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-red text-white">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-navy-50 text-heading">
                     <Check className="h-3.5 w-3.5" strokeWidth={3} aria-hidden="true" />
                   </span>
                   {pt}
@@ -192,7 +192,7 @@ export default function HomePage() {
             ))}
             <Reveal delay={services.length * 80} className="h-full">
               <div className="relative flex h-full min-h-[22rem] flex-col justify-between overflow-hidden rounded-3xl bg-navy p-8 text-white">
-                <div className="absolute -bottom-16 -right-16 h-56 w-56 rounded-full border-[30px] border-brand-red/30" aria-hidden="true" />
+                <div className="absolute -bottom-16 -right-16 h-56 w-56 rounded-full border-[30px] border-white/[0.06]" aria-hidden="true" />
                 <div className="relative">
                   <span className="inline-block h-1.5 w-12 rounded bg-brand-red" aria-hidden="true" />
                   <h3 className="mt-6 text-2xl font-extrabold leading-snug">Not sure where to start?</h3>
@@ -212,20 +212,19 @@ export default function HomePage() {
       </section>
 
       {/* ================= 5. WHY CHOOSE US ================= */}
-      <section className="relative isolate overflow-hidden bg-navy py-24 text-white lg:py-32" aria-labelledby="why-heading">
-        <div className="dot-grid absolute inset-0 -z-10 opacity-30" aria-hidden="true" />
+      <section className="relative py-24 lg:py-32" aria-labelledby="why-heading">
         <div className="container grid items-center gap-16 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <Reveal className="relative">
-              <div className="absolute -bottom-5 -right-5 h-full w-full rounded-3xl border-2 border-brand-red" aria-hidden="true" />
+              <div className="absolute -bottom-5 -right-5 h-full w-full rounded-3xl bg-navy-50" aria-hidden="true" />
               <Photo
                 src={images.whyUs}
-                alt="Consultant leading a planning session at a whiteboard"
+                alt="Two colleagues planning together at a laptop"
                 width={1000}
                 className="relative aspect-[4/5] rounded-3xl"
               />
               <div className="absolute -left-4 bottom-10 max-w-[15rem] rounded-2xl bg-surface p-5 text-heading shadow-lift sm:-left-8">
-                <p className="text-sm font-bold text-brand-red">Evidence-based</p>
+                <p className="text-sm font-bold text-ink">Evidence-based</p>
                 <p className="mt-1 text-[15px] font-semibold leading-snug">Research, data and analysis behind every recommendation.</p>
               </div>
             </Reveal>
@@ -236,18 +235,17 @@ export default function HomePage() {
                 eyebrow={whyChooseUs.eyebrow}
                 heading={whyChooseUs.heading}
                 text="We combine professional expertise, analytical approaches and technology to deliver practical solutions that last."
-                light
               />
             </div>
             <ul className="mt-12 grid gap-5 sm:grid-cols-2">
               {whyChooseUs.items.map((w, i) => (
                 <Reveal as="li" key={w.title} delay={i * 90}>
-                  <div className="group h-full rounded-3xl border border-white/10 bg-white/[0.05] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand-red/60 hover:bg-white/[0.09]">
-                    <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-red text-white transition-transform duration-300 group-hover:scale-110">
+                  <div className="group h-full rounded-3xl bg-surface p-7 shadow-card ring-1 ring-line/[0.06] transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+                    <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-navy-50 text-heading transition-colors duration-300 group-hover:bg-navy group-hover:text-white">
                       <Icon name={w.icon} className="h-7 w-7" />
                     </span>
-                    <h3 className="mt-6 text-xl font-extrabold">{w.title}</h3>
-                    <p className="mt-3 leading-relaxed text-white/70">{w.description}</p>
+                    <h3 className="mt-6 text-xl font-extrabold text-heading">{w.title}</h3>
+                    <p className="mt-3 leading-relaxed text-ink">{w.description}</p>
                   </div>
                 </Reveal>
               ))}
@@ -257,7 +255,7 @@ export default function HomePage() {
       </section>
 
       {/* ================= 6. APPROACH ================= */}
-      <section className="py-24 lg:py-32" aria-labelledby="approach-heading">
+      <section className="bg-mist py-24 lg:py-32" aria-labelledby="approach-heading">
         <div className="container">
           <div id="approach-heading">
             <SectionHeading
@@ -276,9 +274,8 @@ export default function HomePage() {
               {approach.steps.map((s, i) => (
                 <Reveal as="li" key={s.title} delay={i * 110}>
                   <div className="group text-center">
-                    <span className="relative mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-surface text-2xl font-extrabold text-heading shadow-card ring-1 ring-line/10 transition-all duration-300 group-hover:bg-brand-red group-hover:text-white">
+                    <span className="relative mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-surface text-2xl font-extrabold text-heading shadow-card ring-1 ring-line/10 transition-all duration-300 group-hover:bg-navy group-hover:text-white">
                       {String(i + 1).padStart(2, "0")}
-                      <span className="absolute -right-1 -top-1 h-5 w-5 rounded-full border-4 border-canvas bg-brand-red" aria-hidden="true" />
                     </span>
                     <h3 className="mt-7 text-xl font-extrabold text-heading">{s.title}</h3>
                     <p className="mx-auto mt-3 max-w-[16rem] leading-relaxed text-ink">{s.description}</p>

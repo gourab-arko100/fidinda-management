@@ -27,7 +27,7 @@ export function Photo({
       role={alt ? "img" : undefined}
       aria-label={alt}
       aria-hidden={alt ? undefined : true}
-      className={`bg-navy-600 bg-cover bg-center ${className}`}
+      className={`bg-night bg-cover bg-center ${className}`}
       style={{ backgroundImage: `url("${img(src, width)}")`, ...style }}
     >
       {children}
@@ -39,7 +39,7 @@ export function Eyebrow({ children, light = false }: { children: ReactNode; ligh
   return (
     <p
       className={`inline-flex items-center gap-2.5 text-[13px] font-bold uppercase tracking-[0.2em] ${
-        light ? "text-white" : "text-brand-red"
+        light ? "text-white/85" : "text-ink"
       }`}
     >
       <span className={`h-[2px] w-8 ${light ? "bg-brand-red" : "bg-brand-red"}`} aria-hidden="true" />
@@ -86,7 +86,7 @@ type BtnProps = {
 
 export function Button({ href, children, variant = "primary", className = "", arrow = false }: BtnProps) {
   const styles = {
-    primary: "bg-brand-red text-white shadow-[0_10px_24px_-10px_rgba(225,4,28,0.7)] hover:bg-brand-redDark",
+    primary: "bg-brand-red text-white shadow-[0_10px_24px_-12px_rgba(225,4,28,0.45)] hover:bg-brand-redDark",
     navy: "bg-navy text-white hover:bg-brand-red",
     outline: "border-2 border-line/15 text-heading hover:border-line hover:bg-navy hover:text-white",
     light: "bg-surface text-heading hover:bg-brand-red hover:text-white",
@@ -127,7 +127,7 @@ export function Breadcrumbs({ items }: { items: { label: string; href?: string }
               </span>
             )}
             {i < items.length - 1 && (
-              <span aria-hidden="true" className="text-brand-red">
+              <span aria-hidden="true" className="text-white/40">
                 /
               </span>
             )}
@@ -145,6 +145,7 @@ export function PageHero({
   image,
   crumbs,
   children,
+  aside,
 }: {
   eyebrow?: string;
   heading: string;
@@ -152,18 +153,23 @@ export function PageHero({
   image?: string;
   crumbs?: { label: string; href?: string }[];
   children?: ReactNode;
+  /** Optional panel shown on the right on large screens (below the text on mobile). */
+  aside?: ReactNode;
 }) {
   return (
-    <section className="relative isolate overflow-hidden bg-navy text-white">
+    <section className="relative isolate overflow-hidden bg-night text-white">
       {image && <Photo src={image} width={1800} className="absolute inset-0 -z-20" />}
       <div
-        className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/[0.92] to-navy/60"
+        className="absolute inset-0 -z-10 bg-gradient-to-r from-night/95 via-night/80 to-night/40"
         aria-hidden="true"
       />
       <div className="dot-grid absolute inset-0 -z-10 opacity-40" aria-hidden="true" />
-      <div className="absolute bottom-0 left-0 h-1.5 w-1/3 bg-brand-red" aria-hidden="true" />
-      <div className="container relative py-20 sm:py-24 lg:py-28">
-        <div className="max-w-3xl animate-fade-up">
+      <div
+        className={`container relative py-20 sm:py-24 lg:py-28 ${
+          aside ? "grid items-center gap-12 lg:grid-cols-12 lg:gap-16" : ""
+        }`}
+      >
+        <div className={`animate-fade-up ${aside ? "lg:col-span-7" : "max-w-3xl"}`}>
           {crumbs ? <Breadcrumbs items={crumbs} /> : eyebrow && <Eyebrow light>{eyebrow}</Eyebrow>}
           <h1 className="mt-4 text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-[3.4rem]">
             {heading}
@@ -171,6 +177,11 @@ export function PageHero({
           {text && <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/80">{text}</p>}
           {children}
         </div>
+        {aside && (
+          <div className="animate-fade-up lg:col-span-5" style={{ animationDelay: "150ms" }}>
+            {aside}
+          </div>
+        )}
       </div>
     </section>
   );

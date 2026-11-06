@@ -29,10 +29,10 @@ export default function AboutPage() {
         <div className="container grid gap-16 lg:grid-cols-12 lg:gap-20">
           <div className="lg:col-span-5">
             <Reveal className="relative lg:sticky lg:top-32">
-              <div className="absolute -left-4 -top-4 h-32 w-32 rounded-3xl bg-brand-red" aria-hidden="true" />
+              <div className="absolute -left-4 -top-4 h-32 w-32 rounded-3xl bg-navy-50" aria-hidden="true" />
               <Photo
                 src={images.aboutSmall}
-                alt="Fidinda consultants in a team meeting"
+                alt="Two colleagues reviewing information on a phone in an office"
                 width={900}
                 className="relative aspect-[4/5] rounded-3xl shadow-lift"
               />
@@ -79,8 +79,8 @@ export default function AboutPage() {
       <section id="mission-vision" className="scroll-mt-24 py-24 lg:py-28" aria-label="Vision and mission">
         <div className="container space-y-20 lg:space-y-28">
           {[
-            { title: "Our Vision", text: about.missionVision.vision, image: images.vision, alt: "Team members joining hands in partnership", Icon: Eye },
-            { title: "Our Mission", text: about.missionVision.mission, image: images.mission, alt: "Team working together on a solution at a computer", Icon: Target },
+            { title: "Our Vision", text: about.missionVision.vision, image: images.vision, alt: "Businesswoman looking through binoculars toward a stairway leading to an open door", Icon: Eye },
+            { title: "Our Mission", text: about.missionVision.mission, image: images.mission, alt: "Team of professionals in a meeting discussing work", Icon: Target },
           ].map(({ title, text, image, alt, Icon }, i) => {
             const flip = i % 2 === 1;
             return (
@@ -92,7 +92,7 @@ export default function AboutPage() {
                   />
                   <Photo src={image} alt={alt} width={1200} className="relative aspect-[16/10] rounded-3xl shadow-lift" />
                   <span
-                    className={`absolute -top-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-red text-white shadow-[0_16px_30px_-12px_rgba(225,4,28,0.8)] ${
+                    className={`absolute -top-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-surface text-heading shadow-lift ring-1 ring-line/[0.06] ${
                       flip ? "-right-3 sm:-right-5" : "-left-3 sm:-left-5"
                     }`}
                   >

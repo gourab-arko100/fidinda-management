@@ -22,6 +22,10 @@ const config: Config = {
         ink: "rgb(var(--c-ink) / <alpha-value>)", // body copy
         line: "rgb(var(--c-line) / <alpha-value>)", // borders & rings (use with opacity, e.g. border-line/10)
 
+        /* Deep, low-saturation navy for large dark areas (hero overlays, CTA, top bar).
+           Keeps the brand feel without a wall of bright indigo. */
+        night: "#15122B",
+
         /* BRAND — fixed in both themes */
         navy: {
           DEFAULT: "#1C095A",

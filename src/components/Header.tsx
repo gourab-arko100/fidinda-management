@@ -63,7 +63,7 @@ export default function Header() {
   return (
     <>
       {/* Top bar */}
-      <div className="bg-navy text-white">
+      <div className="bg-night text-white">
         <div className="container flex flex-wrap items-center justify-center gap-x-2 gap-y-1 py-2.5 text-xs font-medium sm:justify-between sm:text-[13px]">
           <p className="flex flex-wrap items-center justify-center gap-x-2">
             <Phone className="h-3.5 w-3.5 text-brand-red" aria-hidden="true" />
@@ -196,7 +196,7 @@ export default function Header() {
             <ThemeToggle />
             <Link
               href="/request-quotation"
-              className="hidden rounded-full bg-brand-red px-6 py-3 text-sm font-bold text-white shadow-[0_10px_24px_-10px_rgba(225,4,28,0.7)] transition-all hover:-translate-y-0.5 hover:bg-brand-redDark sm:inline-flex"
+              className="hidden rounded-full bg-brand-red px-6 py-3 text-sm font-bold text-white shadow-[0_10px_24px_-12px_rgba(225,4,28,0.45)] transition-all hover:-translate-y-0.5 hover:bg-brand-redDark sm:inline-flex"
             >
               Request a Quote
             </Link>

@@ -15,6 +15,8 @@ Next.js (App Router) + TypeScript + Tailwind CSS website for **Fidinda Managemen
 
 A sun/moon button in the header switches themes. First visit follows the visitor's device setting; their choice is then remembered. Theme colours are CSS variables at the top of `src/app/globals.css` (`:root` = light, `html.dark` = dark) and are used through the `canvas`, `surface`, `mist`, `heading`, `ink` and `line` colours in `tailwind.config.ts`. Brand navy and red never change.
 
+**Colour balance:** brand red `#E1041C` is kept for buttons, the active menu item and thin accent lines. Brand navy `#1C095A` is used for headings, the logo, the footer and small highlights. Large dark areas (hero overlays, the top bar and the call-to-action banner) use `night` `#15122B`, a deeper and calmer shade of the same navy. Icon tiles use the soft `navy-50` tint instead of solid colour.
+
 ## Run locally
 
 Requires Node.js 18.18+ (Node 20 or 22 recommended).

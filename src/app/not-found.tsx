@@ -4,9 +4,9 @@ import { Button } from "@/components/ui";
 
 export default function NotFound() {
   return (
-    <section className="relative overflow-hidden bg-navy text-white">
+    <section className="relative overflow-hidden bg-night text-white">
       <div className="dot-grid absolute inset-0 opacity-50" aria-hidden="true" />
-      <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-brand-red/20 blur-3xl" aria-hidden="true" />
+      <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-white/[0.04] blur-3xl" aria-hidden="true" />
       <div className="container relative flex min-h-[70vh] flex-col items-center justify-center py-20 text-center">
         <p className="text-[7rem] font-extrabold leading-none sm:text-[10rem]">
           4<span className="text-brand-red">0</span>4

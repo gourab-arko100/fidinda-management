@@ -32,7 +32,18 @@ export type IconName =
   | "lock"
   | "layers"
   | "lightbulb"
-  | "award";
+  | "award"
+  | "code"
+  | "smartphone"
+  | "creditCard"
+  | "message"
+  | "monitor"
+  | "database"
+  | "cart"
+  | "wrench"
+  | "languages"
+  | "banknote"
+  | "mapPin";
 
 /* ------------------------------------------------------------------ */
 /*  Company / contact details                                          */
@@ -88,16 +99,17 @@ const u = (id: string) => `https://images.unsplash.com/${id}`;
 
 export const images = {
   heroCity: u("photo-1723358049559-4f98d449ab92"), // Phnom Penh skyline
-  aboutMain: u("photo-1542744173-8e7e53415bb0"), // presenting to colleagues
-  aboutSmall: u("photo-1758691737543-09a1b2b715fa"), // team meeting
-  whyUs: u("photo-1758873269013-d914addd5d3b"), // whiteboard session
-  cta: u("photo-1517048676732-d65bc937f952"), // meeting with pens
+  /* People photos: Southeast Asian professionals (free Unsplash licence). */
+  aboutMain: u("photo-1754531976828-69e42ce4e0d9"), // Asian business team around a table — Gatot Adri
+  aboutSmall: u("photo-1577415124269-fc1140a69e91"), // two colleagues in a Kuala Lumpur office, Malaysia — Muhammad Faiz Zulkeflee
+  whyUs: u("photo-1681569685386-b7bda397672e"), // two colleagues working at a laptop — Thant Zin
+  cta: u("photo-1672917187338-7f81ecac3d3f"), // Indonesian team meeting in an office — Edi Kurniawan
   resources: u("photo-1454165804606-c3d57bc86b40"), // documents & laptop
   contact: u("photo-1723358049559-4f98d449ab92"),
-  quote: u("photo-1758518729908-d4220a678d81"), // reviewing documents
-  services: u("photo-1758873269035-aae0e1fd3422"), // team at whiteboard
-  vision: u("photo-1582213782179-e0d53f98f2ca"), // hands stacked together — partnership
-  mission: u("photo-1758873268695-1b55590e507a"), // team working together at a screen
+  quote: u("photo-1665224751641-8ea911ca2267"), // businesswoman in a suit — Ky Nang
+  services: u("photo-1754531976828-69e42ce4e0d9"), // Asian business team — Gatot Adri
+  vision: "/images/vision.jpg", // businesswoman with binoculars looking toward a stairway and open door
+  mission: u("photo-1672917187338-7f81ecac3d3f"), // Indonesian team meeting in an office — Edi Kurniawan
 };
 
 /** Builds an optimised Unsplash URL (ignored for local /images files). */
@@ -217,6 +229,17 @@ export type Service = {
   benefits: { title: string; description: string; icon: IconName }[];
   process: { title: string; description: string }[];
   faqs: { q: string; a: string }[];
+  /** Short list shown in the page header panel (falls back to offering titles). */
+  heroHighlights?: string[];
+  /** Detailed service catalogue, grouped by category. */
+  catalogue?: {
+    eyebrow: string;
+    heading: string;
+    text: string;
+    groups: { title: string; icon: IconName; description: string; items: string[] }[];
+  };
+  /** "Built for Cambodia" strip. */
+  local?: { heading: string; points: { title: string; description: string; icon: IconName }[] };
 };
 
 export const services: Service[] = [
@@ -293,7 +316,7 @@ export const services: Service[] = [
   },
   {
     slug: "contract-and-project-management",
-    image: "https://images.unsplash.com/photo-1758691736872-61a1f75fe2d5",
+    image: "https://images.unsplash.com/photo-1681569685386-b7bda397672e", // colleagues planning at a laptop — Thant Zin
     title: "Contract & Project Management",
     navTitle: "Contract & Project Management",
     icon: "clipboard",
@@ -350,48 +373,180 @@ export const services: Service[] = [
     navTitle: "Software, Applications & Cloud",
     icon: "cloud",
     tagline:
-      "Unlock greater efficiency with tailored software and cloud solutions that are secure, scalable and innovative.",
+      "Websites, apps, local payments and cloud tools built for how Cambodian businesses and NGOs actually work — secure, scalable and supported in Khmer and English.",
     intro:
-      "The right technology removes manual work and gives you better information for decisions. We design, implement and support software applications and cloud-based solutions that fit the way your organisation actually works.",
-    seoTitle: "Software Development & Cloud Business Solutions in Cambodia",
+      "The right technology removes manual work, helps you reach customers online and gives you better information for decisions. From your first bilingual website to KHQR payments, Telegram automation, cloud email and M&E dashboards, we design, implement and support solutions that fit the way your organisation works in Cambodia.",
+    seoTitle: "Software, Websites, KHQR Payments & Cloud Solutions in Cambodia",
     seoDescription:
-      "Software application development and implementation, and cloud-based business solutions for organisations in Phnom Penh, Cambodia.",
+      "Bilingual Khmer–English websites, KHQR and local bank payment integration, business apps, Telegram bots, Microsoft 365 and Google Workspace, M&E dashboards and IT support in Phnom Penh, Cambodia.",
+    heroHighlights: [
+      "Khmer–English websites & online shops",
+      "KHQR / Bakong & local bank payments",
+      "Telegram bots & automated alerts",
+      "Microsoft 365 & Google Workspace",
+      "M&E data collection & dashboards",
+    ],
     offerings: [
       {
-        title: "Software application development and implementation",
+        title: "Software & app development",
         description:
-          "Custom web and business applications, as well as setup and configuration of existing software to match your workflows.",
+          "Custom web and mobile applications, and setup of existing software such as POS, HR and CRM tools to match your workflows.",
+      },
+      {
+        title: "Websites, e-commerce & payments",
+        description:
+          "Bilingual websites, online shops and booking systems with KHQR and local bank payment options.",
       },
       {
         title: "Cloud-based business solutions",
         description:
-          "Cloud email, file sharing, collaboration tools, data storage and backups, with secure access from anywhere.",
+          "Professional email, file sharing, collaboration tools, data storage and automatic backups, with secure access from anywhere.",
+      },
+      {
+        title: "IT security & ongoing support",
+        description:
+          "Security reviews, device management and maintenance plans so your systems stay safe and running.",
       },
     ],
+    catalogue: {
+      eyebrow: "Service catalogue",
+      heading: "Technology services for organisations in Cambodia",
+      text: "Choose a single service or combine several into one project. Every solution can be delivered in Khmer, English or both.",
+      groups: [
+        {
+          title: "Websites & online presence",
+          icon: "globe",
+          description: "Get found and trusted online.",
+          items: [
+            "Bilingual Khmer–English business websites",
+            "NGO and project websites with reports and publications",
+            ".com.kh / .org.kh and international domain registration support",
+            "Hosting, SSL security and professional email on your domain",
+            "Google Business Profile and Facebook page setup",
+          ],
+        },
+        {
+          title: "Payments & e-commerce",
+          icon: "creditCard",
+          description: "Let customers pay the way they already do.",
+          items: [
+            "KHQR / Bakong payment integration",
+            "ABA PayWay and other local bank gateway integration",
+            "Online shops, booking and appointment systems",
+            "Invoices and pricing in USD and KHR",
+          ],
+        },
+        {
+          title: "Business applications",
+          icon: "layers",
+          description: "Replace spreadsheets and paperwork.",
+          items: [
+            "POS, sales and inventory systems for shops and restaurants",
+            "HR, leave and attendance management",
+            "CRM and customer follow-up tools",
+            "Document management and digital approvals",
+            "Custom web and mobile apps (Android & iOS)",
+          ],
+        },
+        {
+          title: "Messaging & automation",
+          icon: "message",
+          description: "Work where your team and customers already chat.",
+          items: [
+            "Telegram bots for orders, bookings and notifications",
+            "Website forms and alerts delivered to Telegram",
+            "Facebook Messenger and WhatsApp chat integration",
+            "Automated reminders, reports and workflows",
+          ],
+        },
+        {
+          title: "Cloud & productivity",
+          icon: "cloud",
+          description: "Collaborate securely from anywhere.",
+          items: [
+            "Microsoft 365 or Google Workspace setup and migration",
+            "Shared drives, permissions and file organisation",
+            "Automatic cloud backups and recovery",
+            "Video meeting and collaboration setup",
+          ],
+        },
+        {
+          title: "Data, M&E & dashboards",
+          icon: "database",
+          description: "Turn field data into decisions.",
+          items: [
+            "Mobile data collection with KoboToolbox or ODK",
+            "Dashboards in Power BI or Looker Studio",
+            "Beneficiary, member and case management databases",
+            "Automated donor and management reporting",
+          ],
+        },
+        {
+          title: "IT security & support",
+          icon: "shield",
+          description: "Keep systems safe and running.",
+          items: [
+            "Security review and multi-factor authentication",
+            "Laptop, phone and network setup",
+            "Data protection and access policies",
+            "Ongoing IT support and maintenance plans",
+          ],
+        },
+        {
+          title: "Digital advisory",
+          icon: "compass",
+          description: "Invest in the right technology, in the right order.",
+          items: [
+            "Digital transformation roadmap",
+            "Software selection and vendor evaluation",
+            "IT and systems review",
+            "Staff training on new tools",
+          ],
+        },
+      ],
+    },
+    local: {
+      heading: "Built for Cambodia",
+      points: [
+        { title: "Khmer & English", description: "Interfaces, content and training in both languages, with proper Khmer Unicode.", icon: "languages" },
+        { title: "Local payments", description: "KHQR, Bakong and local bank gateways customers already trust.", icon: "creditCard" },
+        { title: "Telegram-ready", description: "Alerts, bots and messages on the app your team uses every day.", icon: "message" },
+        { title: "USD & KHR", description: "Pricing, invoices and reports in both currencies.", icon: "banknote" },
+        { title: "Local support", description: "On-site help in Phnom Penh and remote support across Cambodia.", icon: "mapPin" },
+      ],
+    },
     benefits: [
       { title: "Efficiency", description: "Automate repetitive tasks and work faster as a team.", icon: "trending" },
+      { title: "More customers", description: "Be easy to find online and easy to pay, in Khmer or English.", icon: "cart" },
       { title: "Security", description: "Access controls, backups and good practice to protect your data.", icon: "lock" },
-      { title: "Scalability", description: "Solutions that grow with your organisation without starting over.", icon: "layers" },
-      { title: "Ongoing support", description: "Training and support so your team uses the tools with confidence.", icon: "users" },
+      { title: "Ongoing support", description: "Training and local support so your team uses the tools with confidence.", icon: "users" },
     ],
     process: [
-      { title: "Discover", description: "We map your processes, pain points and technical environment." },
-      { title: "Design", description: "We propose the right solution, architecture and budget." },
+      { title: "Discover", description: "We map your processes, pain points and current systems." },
+      { title: "Design", description: "We propose the right solution, timeline and budget." },
       { title: "Build & implement", description: "We develop, configure, migrate data and test thoroughly." },
       { title: "Train & support", description: "We train your team and provide ongoing maintenance." },
     ],
     faqs: [
       {
+        q: "Can our website accept KHQR payments?",
+        a: "Yes. We can add KHQR / Bakong payments and integrate local bank payment gateways such as ABA PayWay, so customers can pay from their banking app.",
+      },
+      {
+        q: "Can our website and software be in Khmer and English?",
+        a: "Yes. We build bilingual sites and apps with proper Khmer Unicode fonts, and visitors can switch language easily.",
+      },
+      {
         q: "Do you build custom software or use existing tools?",
-        a: "Both. We recommend existing tools when they fit and build custom applications when your needs are unique.",
+        a: "Both. We recommend existing tools when they fit your needs and budget, and build custom applications when your needs are unique.",
       },
       {
         q: "Is our data safe in the cloud?",
         a: "We follow security best practice including access control, multi-factor authentication and regular backups.",
       },
       {
-        q: "Can you migrate our existing files and data?",
-        a: "Yes. We plan and carry out migrations carefully to avoid data loss and minimise disruption.",
+        q: "Can you migrate our existing files, email and data?",
+        a: "Yes. We plan and carry out migrations carefully to avoid data loss and minimise disruption to your team.",
       },
     ],
   },
@@ -453,7 +608,7 @@ export const services: Service[] = [
   },
   {
     slug: "training-and-capacity-building",
-    image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655",
+    image: "https://images.unsplash.com/photo-1646579886135-068c73800308", // facilitator presenting to a group — Herlambang Tinasih Gusti
     title: "Training & Capacity Building",
     navTitle: "Training & Capacity Building",
     icon: "graduation",
@@ -759,7 +914,11 @@ export const quoteForm = {
     "Contract Management",
     "Project Management",
     "Software/Application Development",
+    "Website & E-commerce",
+    "KHQR / Payment Integration",
+    "Telegram Bots & Automation",
     "Cloud Solutions",
+    "IT Support & Security",
     "Research & Analysis",
     "Feasibility Study",
     "Survey / Baseline / End-line",
@@ -792,7 +951,11 @@ export const contactPage = {
       "Contract management",
       "Project management",
       "Software development",
+      "Website & e-commerce",
+      "KHQR / payment integration",
+      "Telegram bots & automation",
       "Cloud solutions",
+      "IT support & security",
       "Research & analysis",
       "Feasibility study",
       "Baseline / end-line survey",

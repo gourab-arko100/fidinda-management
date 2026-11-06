@@ -15,23 +15,23 @@
   :root {
     --c-canvas: 255 255 255;   /* page background */
     --c-surface: 255 255 255;  /* cards, header, menus */
-    --c-mist: 245 244 250;     /* soft sections, inputs */
+    --c-mist: 246 247 249;     /* soft sections, inputs — neutral, not lavender */
     --c-heading: 28 9 90;      /* #1C095A headings & main text */
-    --c-ink: 74 69 102;        /* body copy */
+    --c-ink: 77 81 99;         /* body copy — calm slate grey */
     --c-line: 28 9 90;         /* borders (used with opacity) */
-    --c-tint: 243 241 250;     /* light navy tint */
-    --c-red-soft: 253 236 238; /* light red tint */
+    --c-tint: 238 240 246;     /* light navy tint */
+    --c-red-soft: 252 239 240; /* light red tint */
   }
   html.dark {
     color-scheme: dark;
-    --c-canvas: 11 3 40;       /* deep shade of brand navy */
-    --c-surface: 21 8 69;
-    --c-mist: 16 5 58;
+    --c-canvas: 14 13 26;      /* near-black with a hint of brand navy */
+    --c-surface: 23 22 40;
+    --c-mist: 18 17 32;
     --c-heading: 255 255 255;
-    --c-ink: 201 195 230;
+    --c-ink: 184 186 204;
     --c-line: 255 255 255;
-    --c-tint: 35 22 92;
-    --c-red-soft: 58 9 56;
+    --c-tint: 34 32 56;
+    --c-red-soft: 48 20 28;
   }
 
   html {
@@ -77,7 +77,7 @@
     @apply text-[15px] text-white/75 transition-colors duration-200 hover:text-white;
   }
   .dot-grid {
-    background-image: radial-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
     background-size: 22px 22px;
     mask-image: linear-gradient(to left, black, transparent 70%);
   }
