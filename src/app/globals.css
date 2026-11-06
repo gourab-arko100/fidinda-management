@@ -37,6 +37,11 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+  /* Anchored sections stop below the sticky header */
+  [id] {
+    scroll-margin-top: 6rem;
   }
   body {
     @apply bg-canvas font-sans text-heading antialiased transition-colors duration-300;
@@ -71,7 +76,7 @@
     @apply block rounded-xl px-3 py-3 text-lg font-bold text-heading hover:bg-mist hover:text-brand-red;
   }
   .footer-title {
-    @apply mb-6 text-lg font-bold text-white;
+    @apply mb-4 text-base font-bold text-white sm:mb-6 sm:text-lg;
   }
   .footer-link {
     @apply text-[15px] text-white/75 transition-colors duration-200 hover:text-white;

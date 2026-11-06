@@ -116,7 +116,7 @@ export default async function ServiceDetailPage({ params }: Props) {
       )}
 
       {/* Overview + offerings */}
-      <section className="py-24 lg:py-28">
+      <section className="py-16 sm:py-24 lg:py-28">
         <div className="container grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-32">
@@ -172,7 +172,7 @@ export default async function ServiceDetailPage({ params }: Props) {
           <ul className="grid gap-5 sm:grid-cols-2 lg:col-span-7">
             {service.offerings.map((o, i) => (
               <Reveal as="li" key={o.title} delay={i * 60}>
-                <div className="group h-full rounded-3xl bg-surface p-7 shadow-card ring-1 ring-line/[0.06] transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+                <div className="group h-full rounded-3xl bg-surface p-6 sm:p-7 shadow-card ring-1 ring-line/[0.06] transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
                   <div className="flex items-center justify-between">
                     <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-navy-50 text-heading transition-colors group-hover:bg-navy group-hover:text-white">
                       <Check className="h-5 w-5" strokeWidth={3} aria-hidden="true" />
@@ -190,7 +190,7 @@ export default async function ServiceDetailPage({ params }: Props) {
 
       {/* Service catalogue */}
       {service.catalogue && (
-        <section className="border-t border-line/10 py-24 lg:py-28" aria-labelledby="catalogue-heading">
+        <section className="border-t border-line/10 py-16 sm:py-24 lg:py-28" aria-labelledby="catalogue-heading">
           <div className="container">
             <div id="catalogue-heading">
               <SectionHeading
@@ -200,10 +200,10 @@ export default async function ServiceDetailPage({ params }: Props) {
                 center
               />
             </div>
-            <ul className="mt-14 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+            <ul className="mt-10 sm:mt-14 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
               {service.catalogue.groups.map((g, i) => (
                 <Reveal as="li" key={g.title} delay={(i % 4) * 70}>
-                  <div className="group flex h-full flex-col rounded-3xl bg-surface p-7 shadow-card ring-1 ring-line/[0.06] transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+                  <div className="group flex h-full flex-col rounded-3xl bg-surface p-6 sm:p-7 shadow-card ring-1 ring-line/[0.06] transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
                     <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-navy-50 text-heading transition-colors group-hover:bg-navy group-hover:text-white">
                       <Icon name={g.icon} className="h-6 w-6" />
                     </span>
@@ -231,15 +231,15 @@ export default async function ServiceDetailPage({ params }: Props) {
       )}
 
       {/* Benefits */}
-      <section className="bg-mist py-24 lg:py-28" aria-labelledby="benefits-heading">
+      <section className="bg-mist py-16 sm:py-24 lg:py-28" aria-labelledby="benefits-heading">
         <div className="container">
           <div id="benefits-heading">
             <SectionHeading eyebrow="Benefits" heading="Why it matters for your organisation" center />
           </div>
-          <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="mt-10 sm:mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {service.benefits.map((b, i) => (
               <Reveal as="li" key={b.title} delay={i * 80}>
-                <div className="group h-full rounded-3xl bg-surface p-7 shadow-card ring-1 ring-line/[0.06] transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+                <div className="group h-full rounded-3xl bg-surface p-6 sm:p-7 shadow-card ring-1 ring-line/[0.06] transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
                   <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-navy-50 text-heading transition-colors group-hover:bg-navy group-hover:text-white">
                     <Icon name={b.icon} className="h-7 w-7" />
                   </span>
@@ -253,12 +253,12 @@ export default async function ServiceDetailPage({ params }: Props) {
       </section>
 
       {/* Process */}
-      <section className="py-24 lg:py-28" aria-labelledby="process-heading">
+      <section className="py-16 sm:py-24 lg:py-28" aria-labelledby="process-heading">
         <div className="container">
           <div id="process-heading">
             <SectionHeading eyebrow="Our process" heading="How we work with you" center />
           </div>
-          <div className="relative mt-16">
+          <div className="relative mt-10 sm:mt-16">
             <div
               className="absolute left-[12.5%] right-[12.5%] top-10 hidden border-t-2 border-dashed border-line/15 lg:block"
               aria-hidden="true"
@@ -281,7 +281,7 @@ export default async function ServiceDetailPage({ params }: Props) {
       </section>
 
       {/* FAQ */}
-      <section className="bg-mist py-24 lg:py-28" aria-labelledby="faq-heading">
+      <section className="bg-mist py-16 sm:py-24 lg:py-28" aria-labelledby="faq-heading">
         <div className="container grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4" id="faq-heading">
             <SectionHeading eyebrow="FAQ" heading="Frequently asked questions" />

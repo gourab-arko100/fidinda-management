@@ -45,7 +45,7 @@ export function ServiceCard({ service, index = 0 }: { service: Service; index?: 
 /* ---------------- Four Fs ---------------- */
 export function ValuesSection() {
   return (
-    <section id="values" className="relative scroll-mt-24 overflow-hidden bg-mist py-24 lg:py-28" aria-labelledby="values-heading">
+    <section id="values" className="relative scroll-mt-24 overflow-hidden bg-mist py-16 sm:py-24 lg:py-28" aria-labelledby="values-heading">
       <div className="dot-grid-navy absolute -left-10 top-10 h-48 w-48 opacity-60" aria-hidden="true" />
       <div className="dot-grid-navy absolute -right-10 bottom-10 h-48 w-48 opacity-60" aria-hidden="true" />
       <div className="container relative">
@@ -57,10 +57,10 @@ export function ValuesSection() {
             center
           />
         </div>
-        <ul className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-10 sm:mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {values.items.map((v, i) => (
             <Reveal as="li" key={v.title} delay={i * 90}>
-              <div className="group relative h-full overflow-hidden rounded-3xl bg-surface p-8 shadow-card transition-all duration-500 hover:-translate-y-2 hover:bg-navy hover:shadow-lift">
+              <div className="group relative h-full overflow-hidden rounded-3xl bg-surface p-6 sm:p-8 shadow-card transition-all duration-500 hover:-translate-y-2 hover:bg-navy hover:shadow-lift">
                 <span
                   className="pointer-events-none absolute -bottom-10 -right-4 select-none text-[170px] font-extrabold leading-none text-heading/[0.04] transition-colors duration-500 group-hover:text-white/[0.06]"
                   aria-hidden="true"
@@ -101,7 +101,7 @@ export function FinancialBanner() {
             href={b.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative flex flex-col items-start justify-between gap-6 overflow-hidden rounded-3xl border border-line/10 bg-surface p-7 shadow-card transition-all duration-300 hover:shadow-lift sm:flex-row sm:items-center sm:p-9"
+            className="group relative flex flex-col items-start justify-between gap-6 overflow-hidden rounded-3xl border border-line/10 bg-surface p-6 sm:p-7 shadow-card transition-all duration-300 hover:shadow-lift sm:flex-row sm:items-center sm:p-9"
           >
             <span className="absolute inset-y-0 left-0 w-1.5 bg-brand-red" aria-hidden="true" />
             <div className="flex items-center gap-5">
@@ -133,17 +133,17 @@ export function CTAStrip({
   text?: string;
 }) {
   return (
-    <section className="pb-24 pt-4">
+    <section className="pb-16 sm:pb-24 pt-4">
       <div className="container">
         <Reveal>
-          <div className="relative isolate overflow-hidden rounded-[2rem] bg-night px-7 py-14 text-white sm:px-14 lg:py-20">
+          <div className="relative isolate overflow-hidden rounded-3xl bg-night px-6 py-12 text-white sm:rounded-[2rem] sm:px-14 sm:py-14 lg:py-20">
             <Photo src={images.cta} width={1600} className="absolute inset-0 -z-20" />
             <div className="absolute inset-0 -z-10 bg-gradient-to-r from-night/95 via-night/85 to-night/50" aria-hidden="true" />
             <div className="absolute -right-24 -top-24 -z-10 h-72 w-72 rounded-full border-[40px] border-white/[0.05]" aria-hidden="true" />
             <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">
                 <span className="inline-block h-1.5 w-14 rounded bg-brand-red" aria-hidden="true" />
-                <h2 className="mt-6 text-4xl font-extrabold leading-tight sm:text-5xl">{heading}</h2>
+                <h2 className="mt-5 text-3xl font-extrabold leading-tight sm:mt-6 sm:text-5xl">{heading}</h2>
                 <p className="mt-5 text-lg leading-relaxed text-white/80">{text}</p>
               </div>
               <div className="flex shrink-0 flex-wrap gap-4">
@@ -172,7 +172,7 @@ export function FAQList({ faqs }: { faqs: { q: string; a: string }[] }) {
           className="faq group rounded-2xl border border-line/10 bg-surface px-6 shadow-sm transition-shadow open:shadow-card"
           open={i === 0}
         >
-          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-[17px] font-bold text-heading">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-4 text-base font-bold text-heading sm:py-5 sm:text-[17px]">
             {f.q}
             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-navy-50 text-heading transition-all duration-300 group-open:rotate-45 group-open:bg-navy group-open:text-white">
               <Plus className="h-4 w-4" aria-hidden="true" />
@@ -214,7 +214,7 @@ export function DivisionCards() {
             </p>
           </>
         );
-        const cls = `group flex h-full flex-col rounded-3xl p-7 transition-all duration-300 ${
+        const cls = `group flex h-full flex-col rounded-3xl p-6 sm:p-7 transition-all duration-300 ${
           d.current
             ? "bg-navy shadow-lift ring-2 ring-brand-red ring-offset-4 ring-offset-mist"
             : "bg-surface shadow-card hover:-translate-y-1.5 hover:shadow-lift"

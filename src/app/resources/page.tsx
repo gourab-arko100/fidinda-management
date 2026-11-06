@@ -46,7 +46,7 @@ function ResourceCard({ item, kind, index }: { item: ResourceItem; kind: "articl
     </>
   );
   const cls =
-    "group relative flex h-full flex-col overflow-hidden rounded-3xl bg-surface p-8 shadow-card ring-1 ring-line/[0.06] before:absolute before:inset-x-0 before:top-0 before:h-1 before:origin-left before:scale-x-0 before:bg-brand-red before:transition-transform before:duration-500 hover:before:scale-x-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift";
+    "group relative flex h-full flex-col overflow-hidden rounded-3xl bg-surface p-6 sm:p-8 shadow-card ring-1 ring-line/[0.06] before:absolute before:inset-x-0 before:top-0 before:h-1 before:origin-left before:scale-x-0 before:bg-brand-red before:transition-transform before:duration-500 hover:before:scale-x-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift";
   return (
     <Reveal as="li" delay={index * 70}>
       {item.href ? (
@@ -70,7 +70,7 @@ export default function ResourcesPage() {
         crumbs={[{ label: "Home", href: "/" }, { label: "Resources" }]}
       />
 
-      <nav aria-label="Resource sections" className="sticky top-20 z-20 border-b border-line/10 bg-surface/95 backdrop-blur">
+      <nav aria-label="Resource sections" className="sticky top-[68px] sm:top-20 z-20 border-b border-line/10 bg-surface/95 backdrop-blur">
         <div className="container flex gap-2 py-3">
           <a href="#articles" className="rounded-full px-4 py-2 text-sm font-semibold text-heading hover:bg-mist hover:text-brand-red">
             Articles
@@ -81,7 +81,7 @@ export default function ResourcesPage() {
         </div>
       </nav>
 
-      <section id="articles" className="scroll-mt-36 py-20 lg:py-24">
+      <section id="articles" className="scroll-mt-36 py-14 sm:py-20 lg:py-24">
         <div className="container">
           <SectionHeading eyebrow="Articles" heading="Latest insights" text="Practical articles and guides from our consultants." />
           <ul className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -92,7 +92,7 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      <section id="publications" className="scroll-mt-36 bg-mist py-20 lg:py-24">
+      <section id="publications" className="scroll-mt-36 bg-mist py-14 sm:py-20 lg:py-24">
         <div className="container">
           <SectionHeading
             eyebrow="Publications"

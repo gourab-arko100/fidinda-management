@@ -26,10 +26,10 @@ export default function ContactPage() {
         crumbs={[{ label: "Home", href: "/" }, { label: "Contact Us" }]}
       />
 
-      <section className="bg-mist pb-24">
+      <section className="bg-mist pb-16 sm:pb-24">
         <div className="container grid items-start gap-8 lg:grid-cols-12">
           {/* ---------- Form card (overlaps the hero) ---------- */}
-          <div className="relative z-10 -mt-16 rounded-3xl bg-surface p-6 shadow-lift ring-1 ring-line/5 sm:-mt-20 sm:p-10 lg:col-span-7">
+          <div className="relative z-10 -mt-8 rounded-3xl bg-surface p-5 shadow-lift ring-1 ring-line/5 sm:-mt-20 sm:p-10 lg:col-span-7">
             <Eyebrow>{form.eyebrow}</Eyebrow>
             <h2 className="mt-3 text-2xl font-extrabold text-heading sm:text-3xl">{form.heading}</h2>
             <p className="mb-9 mt-3 max-w-lg text-[15px] leading-relaxed text-ink">{form.text}</p>
@@ -39,7 +39,7 @@ export default function ContactPage() {
           {/* ---------- Sidebar ---------- */}
           <aside className="space-y-6 lg:col-span-5 lg:pt-10">
             {/* Navy contact card */}
-            <div className="relative overflow-hidden rounded-3xl bg-navy p-7 text-white shadow-lift sm:p-8">
+            <div className="relative overflow-hidden rounded-3xl bg-navy p-6 sm:p-7 text-white shadow-lift sm:p-8">
               <div className="absolute -right-16 -top-16 h-44 w-44 rounded-full border-[28px] border-brand-red/20" aria-hidden="true" />
               <Image src="/logo-dark.png" alt={`${site.name} logo`} width={620} height={127} sizes="220px" className="relative h-10 w-auto" />
               <p className="relative mt-3 text-sm text-white/70">{sidebar.tagline}</p>
@@ -117,7 +117,7 @@ export default function ContactPage() {
             </div>
 
             {/* Services at a glance */}
-            <div className="rounded-3xl bg-surface p-7 shadow-card ring-1 ring-line/10 sm:p-8">
+            <div className="rounded-3xl bg-surface p-6 sm:p-7 shadow-card ring-1 ring-line/10 sm:p-8">
               <h2 className="text-lg font-extrabold text-heading">{sidebar.glanceTitle}</h2>
               <ul className="mt-5 space-y-3.5">
                 {sidebar.glance.map((g) => (
@@ -132,7 +132,7 @@ export default function ContactPage() {
             </div>
 
             {/* Important information */}
-            <div className="rounded-3xl bg-navy-50 p-7 sm:p-8">
+            <div className="rounded-3xl bg-navy-50 p-6 sm:p-8">
               <h2 className="text-lg font-extrabold text-heading">{sidebar.infoTitle}</h2>
               <p className="mt-3 text-sm leading-relaxed text-ink">{sidebar.info}</p>
             </div>

@@ -36,9 +36,9 @@ export default function Footer() {
       </h2>
 
       <div className="container pb-10 pt-16 lg:pt-20">
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.35fr_1fr_1fr_1fr_1fr] lg:gap-10">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-12 lg:grid-cols-[1.35fr_1fr_1fr_1fr_1fr] lg:gap-10">
           {/* Brand + contact */}
-          <div className="sm:col-span-2 lg:col-span-1">
+          <div className="col-span-2 lg:col-span-1">
             <div className="inline-flex rounded-xl bg-white px-4 py-3.5 shadow-sm">
               <Image src="/logo-footer.png" alt={`${site.name} logo`} width={616} height={122} sizes="200px" className="h-8 w-auto" />
             </div>
@@ -103,7 +103,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 border-t border-white/15 pt-7">
+        <div className="mt-10 border-t border-white/15 pb-20 pt-7 sm:mt-14 sm:pb-0">
           <p className="text-sm text-white/80">{site.copyright}</p>
         </div>
       </div>

@@ -22,7 +22,7 @@ export default function HomePage() {
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-night/70 via-transparent to-transparent" aria-hidden="true" />
         <div className="dot-grid absolute inset-0 -z-10 opacity-40" aria-hidden="true" />
 
-        <div className="container pb-40 pt-20 sm:pt-24 lg:pb-48 lg:pt-28">
+        <div className="container pb-36 pt-12 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-28">
           <div className="grid items-center gap-14 lg:grid-cols-12">
             <div className="lg:col-span-7">
               <div className="animate-fade-up">
@@ -32,7 +32,7 @@ export default function HomePage() {
                 </span>
               </div>
               <h1
-                className="mt-7 animate-fade-up text-[2.6rem] font-extrabold leading-[1.08] tracking-tight sm:text-6xl lg:text-[4.1rem]"
+                className="mt-6 animate-fade-up text-[2.2rem] font-extrabold leading-[1.1] tracking-tight min-[400px]:text-[2.5rem] sm:mt-7 sm:text-6xl sm:leading-[1.08] lg:text-[4.1rem]"
                 style={{ animationDelay: "100ms" }}
               >
                 {headingParts[0]}
@@ -52,12 +52,12 @@ export default function HomePage() {
                 {headingParts.slice(1).join(hero.highlight)}
               </h1>
               <p
-                className="mt-8 max-w-xl animate-fade-up text-lg leading-relaxed text-white/80 sm:text-xl"
+                className="mt-6 max-w-xl animate-fade-up text-base leading-relaxed text-white/80 sm:mt-8 sm:text-xl"
                 style={{ animationDelay: "200ms" }}
               >
                 {hero.subtext}
               </p>
-              <div className="mt-10 flex animate-fade-up flex-wrap gap-4" style={{ animationDelay: "300ms" }}>
+              <div className="mt-8 flex animate-fade-up flex-wrap gap-3 sm:mt-10 sm:gap-4" style={{ animationDelay: "300ms" }}>
                 <Button href={hero.primaryCta.href} arrow>
                   {hero.primaryCta.label}
                 </Button>
@@ -69,15 +69,15 @@ export default function HomePage() {
 
             {/* Fact tiles */}
             <div className="animate-fade-up lg:col-span-5" style={{ animationDelay: "350ms" }}>
-              <ul className="grid grid-cols-2 gap-4">
+              <ul className="grid grid-cols-2 gap-3 sm:gap-4">
                 {hero.facts.map((f, i) => (
                   <li
                     key={f.label}
-                    className={`rounded-3xl border border-white/15 bg-white/[0.08] p-6 backdrop-blur-md ${
+                    className={`rounded-2xl border border-white/15 bg-white/[0.08] p-4 backdrop-blur-md sm:rounded-3xl sm:p-6 ${
                       i % 2 === 1 ? "lg:translate-y-8" : ""
                     }`}
                   >
-                    <p className="text-3xl font-extrabold sm:text-4xl">
+                    <p className="whitespace-nowrap text-2xl font-extrabold sm:text-4xl">
                       {f.value}
                       {i === 0 && <span className="text-brand-red">.</span>}
                     </p>
@@ -92,9 +92,9 @@ export default function HomePage() {
       </section>
 
       {/* ================= 2. WHO WE SERVE (overlapping) ================= */}
-      <section aria-labelledby="serve-heading" className="relative z-10 -mt-28 lg:-mt-32">
+      <section aria-labelledby="serve-heading" className="relative z-10 -mt-24 sm:-mt-28 lg:-mt-32">
         <div className="container">
-          <div className="rounded-[2rem] bg-surface p-6 shadow-lift ring-1 ring-line/5 sm:p-10">
+          <div className="rounded-3xl bg-surface p-5 shadow-lift ring-1 ring-line/5 sm:rounded-[2rem] sm:p-10">
             <div className="flex flex-col justify-between gap-3 md:flex-row md:items-end">
               <div>
                 <Eyebrow>{audiences.eyebrow}</Eyebrow>
@@ -123,32 +123,32 @@ export default function HomePage() {
       </section>
 
       {/* ================= 3. WHO WE ARE ================= */}
-      <section className="py-24 lg:py-32" aria-labelledby="intro-heading">
+      <section className="py-16 sm:py-24 lg:py-32" aria-labelledby="intro-heading">
         <div className="container grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
           <Reveal className="relative mx-auto w-full max-w-xl lg:max-w-none">
-            <div className="absolute -left-4 -top-4 h-40 w-40 rounded-3xl bg-navy-50 sm:-left-6 sm:-top-6" aria-hidden="true" />
+            <div className="absolute -left-3 -top-3 h-28 w-28 rounded-3xl bg-navy-50 sm:-left-6 sm:-top-6 sm:h-40 sm:w-40" aria-hidden="true" />
             <div className="dot-grid-navy absolute -bottom-8 -right-4 h-40 w-48" aria-hidden="true" />
             <Photo
               src={images.aboutMain}
               alt="Consultant presenting to a team around a meeting table"
               width={1100}
-              className="relative aspect-[4/5] w-[82%] rounded-3xl shadow-lift"
+              className="relative aspect-[4/3] w-[88%] rounded-3xl shadow-lift sm:aspect-[4/5] sm:w-[82%]"
             />
             <Photo
               src={images.aboutSmall}
               alt="Team discussing a project in a modern office"
               width={700}
-              className="absolute bottom-[-2rem] right-0 aspect-square w-[48%] rounded-3xl border-8 border-canvas shadow-lift"
+              className="absolute bottom-[-2rem] right-0 aspect-square w-[42%] rounded-2xl border-[6px] border-canvas shadow-lift sm:w-[48%] sm:rounded-3xl sm:border-8"
             />
-            <div className="absolute left-6 top-1/2 rounded-2xl bg-navy px-5 py-4 text-white shadow-lift sm:left-[-1.5rem]">
-              <p className="text-2xl font-extrabold">{intro.badge.value}</p>
+            <div className="absolute left-4 top-[42%] rounded-2xl bg-navy px-4 py-3 text-white shadow-lift sm:left-[-1.5rem] sm:top-1/2 sm:px-5 sm:py-4">
+              <p className="text-xl font-extrabold sm:text-2xl">{intro.badge.value}</p>
               <p className="text-xs font-medium text-white/70">{intro.badge.label}</p>
             </div>
           </Reveal>
 
           <div>
             <Eyebrow>{intro.eyebrow}</Eyebrow>
-            <h2 id="intro-heading" className="mt-4 text-3xl font-extrabold leading-[1.15] tracking-tight text-heading sm:text-[2.6rem]">
+            <h2 id="intro-heading" className="mt-3 text-[1.75rem] font-extrabold leading-[1.18] tracking-tight text-heading sm:mt-4 sm:text-[2.6rem] sm:leading-[1.15]">
               {intro.heading}
             </h2>
             {intro.paragraphs.map((p, i) => (
@@ -176,7 +176,7 @@ export default function HomePage() {
       </section>
 
       {/* ================= 4. SERVICES ================= */}
-      <section className="relative overflow-hidden bg-mist py-24 lg:py-28" aria-labelledby="services-heading">
+      <section className="relative overflow-hidden bg-mist py-16 sm:py-24 lg:py-28" aria-labelledby="services-heading">
         <div className="container relative">
           <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
             <div id="services-heading">
@@ -186,12 +186,12 @@ export default function HomePage() {
               All services
             </Button>
           </div>
-          <div className="mt-14 grid gap-7 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 sm:mt-14 grid gap-7 md:grid-cols-2 lg:grid-cols-3">
             {services.map((s, i) => (
               <ServiceCard key={s.slug} service={s} index={i} />
             ))}
             <Reveal delay={services.length * 80} className="h-full">
-              <div className="relative flex h-full min-h-[22rem] flex-col justify-between overflow-hidden rounded-3xl bg-navy p-8 text-white">
+              <div className="relative flex h-full min-h-[22rem] flex-col justify-between overflow-hidden rounded-3xl bg-navy p-6 sm:p-8 text-white">
                 <div className="absolute -bottom-16 -right-16 h-56 w-56 rounded-full border-[30px] border-white/[0.06]" aria-hidden="true" />
                 <div className="relative">
                   <span className="inline-block h-1.5 w-12 rounded bg-brand-red" aria-hidden="true" />
@@ -212,7 +212,7 @@ export default function HomePage() {
       </section>
 
       {/* ================= 5. WHY CHOOSE US ================= */}
-      <section className="relative py-24 lg:py-32" aria-labelledby="why-heading">
+      <section className="relative py-16 sm:py-24 lg:py-32" aria-labelledby="why-heading">
         <div className="container grid items-center gap-16 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <Reveal className="relative">
@@ -240,7 +240,7 @@ export default function HomePage() {
             <ul className="mt-12 grid gap-5 sm:grid-cols-2">
               {whyChooseUs.items.map((w, i) => (
                 <Reveal as="li" key={w.title} delay={i * 90}>
-                  <div className="group h-full rounded-3xl bg-surface p-7 shadow-card ring-1 ring-line/[0.06] transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+                  <div className="group h-full rounded-3xl bg-surface p-6 sm:p-7 shadow-card ring-1 ring-line/[0.06] transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
                     <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-navy-50 text-heading transition-colors duration-300 group-hover:bg-navy group-hover:text-white">
                       <Icon name={w.icon} className="h-7 w-7" />
                     </span>
@@ -255,7 +255,7 @@ export default function HomePage() {
       </section>
 
       {/* ================= 6. APPROACH ================= */}
-      <section className="bg-mist py-24 lg:py-32" aria-labelledby="approach-heading">
+      <section className="bg-mist py-16 sm:py-24 lg:py-32" aria-labelledby="approach-heading">
         <div className="container">
           <div id="approach-heading">
             <SectionHeading
@@ -265,7 +265,7 @@ export default function HomePage() {
               center
             />
           </div>
-          <div className="relative mt-16">
+          <div className="relative mt-10 sm:mt-16">
             <div
               className="absolute left-[12.5%] right-[12.5%] top-10 hidden border-t-2 border-dashed border-line/15 lg:block"
               aria-hidden="true"

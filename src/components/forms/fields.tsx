@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { AlertCircle, CheckCircle2 } from "lucide-react";
 
 export const inputCls = (hasError?: boolean) =>
-  `w-full rounded-xl border bg-mist px-4 py-3 text-[15px] text-heading placeholder:text-ink/60 transition-all focus:bg-surface focus:outline-none focus:ring-4 ${
+  `w-full rounded-xl border bg-mist px-4 py-3 text-base text-heading sm:text-[15px] placeholder:text-ink/60 transition-all focus:bg-surface focus:outline-none focus:ring-4 ${
     hasError
       ? "border-brand-red focus:border-brand-red focus:ring-brand-red/15"
       : "border-transparent hover:border-line/15 focus:border-line/40 focus:ring-line/10"

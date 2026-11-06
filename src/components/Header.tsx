@@ -22,6 +22,9 @@ export default function Header() {
   const [svcOpen, setSvcOpen] = useState(false);
   const [mobileSvc, setMobileSvc] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+  // Height left below the header, so the mobile menu always fits the screen.
+  const [menuTop, setMenuTop] = useState(80);
   const dropdownRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
@@ -55,6 +58,7 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
+    if (open && headerRef.current) setMenuTop(Math.max(0, headerRef.current.getBoundingClientRect().bottom));
     document.body.style.overflow = open ? "hidden" : "";
   }, [open]);
 
@@ -64,18 +68,22 @@ export default function Header() {
     <>
       {/* Top bar */}
       <div className="bg-night text-white">
-        <div className="container flex flex-wrap items-center justify-center gap-x-2 gap-y-1 py-2.5 text-xs font-medium sm:justify-between sm:text-[13px]">
-          <p className="flex flex-wrap items-center justify-center gap-x-2">
+        <div className="container flex flex-wrap items-center justify-center gap-x-2 gap-y-1 py-1.5 text-[12px] font-medium sm:justify-between sm:py-2.5 sm:text-[13px]">
+          <p className="flex items-center justify-center gap-x-2 whitespace-nowrap">
             <Phone className="h-3.5 w-3.5 text-brand-red" aria-hidden="true" />
-            <span className="font-medium">Call Us</span>
-            <a href={`tel:${site.phones[0].tel}`} className="hover:text-brand-red hover:underline">
-              {site.phones[0].display} ({site.phones[0].label})
+            <span className="hidden font-medium sm:inline">Call Us</span>
+            <a href={`tel:${site.phones[0].tel}`} className="py-1 hover:text-brand-red hover:underline">
+              {site.phones[0].display}{" "}
+              <span className="sm:hidden">KH</span>
+              <span className="hidden sm:inline">({site.phones[0].label})</span>
             </a>
             <span aria-hidden="true" className="text-white/40">
               |
             </span>
-            <a href={`tel:${site.phones[1].tel}`} className="hover:text-brand-red hover:underline">
-              {site.phones[1].display} ({site.phones[1].label})
+            <a href={`tel:${site.phones[1].tel}`} className="py-1 hover:text-brand-red hover:underline">
+              {site.phones[1].display}{" "}
+              <span className="sm:hidden">EN</span>
+              <span className="hidden sm:inline">({site.phones[1].label})</span>
             </a>
           </p>
           <div className="hidden items-center gap-5 sm:flex">
@@ -89,11 +97,12 @@ export default function Header() {
       </div>
 
       <header
+        ref={headerRef}
         className={`sticky top-0 z-40 border-b bg-surface/95 backdrop-blur transition-shadow duration-300 ${
           scrolled ? "border-line/10 shadow-card" : "border-transparent"
         }`}
       >
-        <div className="container flex h-20 items-center justify-between gap-6">
+        <div className="container flex h-[68px] items-center justify-between gap-4 sm:h-20 sm:gap-6">
           <Link href="/" className="flex shrink-0 items-center" aria-label={`${site.name} — home`}>
             <Image
               src="/logo.png"
@@ -216,7 +225,8 @@ export default function Header() {
         {/* Mobile menu */}
         <div
           id="mobile-menu"
-          className={`absolute inset-x-0 top-full h-[calc(100dvh-80px)] overflow-y-auto border-t border-line/10 bg-surface transition-all duration-300 lg:hidden ${
+          style={{ height: `calc(100dvh - ${menuTop}px)` }}
+          className={`absolute inset-x-0 top-full overflow-y-auto overscroll-contain border-t border-line/10 bg-surface transition-all duration-300 lg:hidden ${
             open ? "visible opacity-100" : "invisible opacity-0"
           }`}
         >

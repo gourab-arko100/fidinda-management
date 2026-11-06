@@ -27,8 +27,15 @@ export function Photo({
       role={alt ? "img" : undefined}
       aria-label={alt}
       aria-hidden={alt ? undefined : true}
-      className={`bg-night bg-cover bg-center ${className}`}
-      style={{ backgroundImage: `url("${img(src, width)}")`, ...style }}
+      className={`bg-night bg-cover bg-center bg-[image:var(--photo-sm)] md:bg-[image:var(--photo-lg)] ${className}`}
+      style={
+        {
+          // Phones download a smaller copy; tablets and desktops get the full size.
+          "--photo-sm": `url("${img(src, Math.min(width, 800))}")`,
+          "--photo-lg": `url("${img(src, width)}")`,
+          ...style,
+        } as CSSProperties
+      }
     >
       {children}
     </div>
@@ -65,13 +72,13 @@ export function SectionHeading({
     <div className={`max-w-2xl ${center ? "mx-auto text-center" : ""}`}>
       {eyebrow && <Eyebrow light={light}>{eyebrow}</Eyebrow>}
       <h2
-        className={`mt-4 text-3xl font-extrabold leading-[1.15] tracking-tight sm:text-[2.6rem] ${
+        className={`mt-3 text-[1.75rem] font-extrabold leading-[1.18] tracking-tight sm:mt-4 sm:text-[2.6rem] sm:leading-[1.15] ${
           light ? "text-white" : "text-heading"
         }`}
       >
         {heading}
       </h2>
-      {text && <p className={`mt-5 text-lg leading-relaxed ${light ? "text-white/75" : "text-ink"}`}>{text}</p>}
+      {text && <p className={`mt-4 text-base leading-relaxed sm:mt-5 sm:text-lg ${light ? "text-white/75" : "text-ink"}`}>{text}</p>}
     </div>
   );
 }
@@ -165,20 +172,20 @@ export function PageHero({
       />
       <div className="dot-grid absolute inset-0 -z-10 opacity-40" aria-hidden="true" />
       <div
-        className={`container relative py-20 sm:py-24 lg:py-28 ${
+        className={`container relative py-14 sm:py-24 lg:py-28 ${
           aside ? "grid items-center gap-12 lg:grid-cols-12 lg:gap-16" : ""
         }`}
       >
         <div className={`animate-fade-up ${aside ? "lg:col-span-7" : "max-w-3xl"}`}>
           {crumbs ? <Breadcrumbs items={crumbs} /> : eyebrow && <Eyebrow light>{eyebrow}</Eyebrow>}
-          <h1 className="mt-4 text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-[3.4rem]">
+          <h1 className="mt-4 text-[2rem] font-extrabold leading-[1.12] tracking-tight [overflow-wrap:anywhere] sm:text-5xl sm:[overflow-wrap:normal] lg:text-[3.4rem]">
             {heading}
           </h1>
-          {text && <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/80">{text}</p>}
+          {text && <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/80 sm:mt-6 sm:text-lg">{text}</p>}
           {children}
         </div>
         {aside && (
-          <div className="animate-fade-up lg:col-span-5" style={{ animationDelay: "150ms" }}>
+          <div className="hidden animate-fade-up lg:col-span-5 lg:block" style={{ animationDelay: "150ms" }}>
             {aside}
           </div>
         )}

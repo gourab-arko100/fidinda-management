@@ -23,7 +23,7 @@ export default function RequestQuotationPage() {
 
       <section className="bg-mist pb-20 lg:pb-24">
         <div className="container grid gap-8 lg:grid-cols-12">
-          <div className="relative z-10 -mt-12 rounded-3xl bg-surface p-6 shadow-lift ring-1 ring-line/5 sm:p-10 lg:col-span-8">
+          <div className="relative z-10 -mt-8 rounded-3xl bg-surface p-5 shadow-lift ring-1 ring-line/5 sm:-mt-12 sm:p-10 lg:col-span-8">
             <h2 className="text-2xl font-extrabold text-heading">Quotation request form</h2>
             <p className="mb-8 mt-2 text-sm text-ink/80">
               Fields marked <span className="text-brand-red">*</span> are required.
@@ -32,7 +32,7 @@ export default function RequestQuotationPage() {
           </div>
 
           <aside className="space-y-6 lg:col-span-4 lg:pt-16">
-            <div className="rounded-3xl bg-navy p-8 text-white">
+            <div className="rounded-3xl bg-navy p-6 sm:p-8 text-white">
               <h2 className="text-xl font-extrabold">What happens next?</h2>
               <ol className="mt-6 space-y-5">
                 {[
@@ -50,7 +50,7 @@ export default function RequestQuotationPage() {
               </ol>
             </div>
 
-            <div className="rounded-3xl bg-surface p-8 shadow-card">
+            <div className="rounded-3xl bg-surface p-6 sm:p-8 shadow-card">
               <h2 className="text-lg font-extrabold text-heading">Prefer to talk?</h2>
               <ul className="mt-5 space-y-4 text-sm">
                 {site.phones.map((p) => (

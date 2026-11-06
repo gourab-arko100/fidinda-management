@@ -38,8 +38,8 @@ export default function ServicesPage() {
         </ul>
       </PageHero>
 
-      <section className="py-24 lg:py-28">
-        <div className="container space-y-20 lg:space-y-28">
+      <section className="py-16 sm:py-24 lg:py-28">
+        <div className="container space-y-16 sm:space-y-20 lg:space-y-28">
           {services.map((s, i) => {
             const flip = i % 2 === 1;
             return (
@@ -63,7 +63,7 @@ export default function ServicesPage() {
                   <p className="text-sm font-extrabold uppercase tracking-[0.2em] text-ink">
                     Service {String(i + 1).padStart(2, "0")}
                   </p>
-                  <h2 className="mt-3 text-3xl font-extrabold leading-tight text-heading sm:text-4xl">{s.title}</h2>
+                  <h2 className="mt-3 text-[1.65rem] font-extrabold leading-tight text-heading sm:text-4xl">{s.title}</h2>
                   <p className="mt-5 text-lg leading-relaxed text-ink">{s.intro}</p>
                   <ul className="mt-7 grid gap-3 sm:grid-cols-2">
                     {s.offerings.map((o) => (

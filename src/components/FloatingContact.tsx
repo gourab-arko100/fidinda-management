@@ -5,14 +5,14 @@ export default function FloatingContact() {
   const wa = `https://wa.me/${site.whatsappNumber}?text=${encodeURIComponent(site.whatsappMessage)}`;
 
   return (
-    <div className="fixed bottom-5 right-4 z-50 flex flex-col items-center gap-3 print:hidden sm:bottom-6 sm:right-6">
+    <div className="fixed bottom-4 right-3 z-50 flex flex-col items-center gap-2.5 print:hidden sm:bottom-6 sm:right-6 sm:gap-3">
       <a
         href={site.telegramUrl}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with us on Telegram"
         title="Telegram"
-        className="flex h-[52px] w-[52px] items-center justify-center rounded-full bg-[#2AABEE] text-white shadow-[0_8px_20px_-6px_rgba(0,0,0,0.35)] transition-transform duration-200 hover:scale-110"
+        className="flex h-12 w-12 items-center sm:h-[52px] sm:w-[52px] justify-center rounded-full bg-[#2AABEE] text-white shadow-[0_8px_20px_-6px_rgba(0,0,0,0.35)] transition-transform duration-200 hover:scale-110"
       >
         <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
           <path d="M21.9 4.3 18.8 19c-.2 1-.8 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.3.3-.5.5-1 .5l.3-4.7 8.6-7.8c.4-.3-.1-.5-.6-.2L6.9 13 2.3 11.6c-1-.3-1-1 .2-1.5l18-6.9c.8-.3 1.6.2 1.4 1.1z" />
@@ -24,7 +24,7 @@ export default function FloatingContact() {
         rel="noopener noreferrer"
         aria-label="Chat with us on WhatsApp"
         title="WhatsApp"
-        className="relative flex h-[58px] w-[58px] items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_8px_20px_-6px_rgba(0,0,0,0.35)] transition-transform duration-200 hover:scale-110"
+        className="relative flex h-[52px] w-[52px] items-center sm:h-[58px] sm:w-[58px] justify-center rounded-full bg-[#25D366] text-white shadow-[0_8px_20px_-6px_rgba(0,0,0,0.35)] transition-transform duration-200 hover:scale-110"
       >
         <span className="absolute inset-0 animate-ping rounded-full bg-[#25D366] opacity-30" aria-hidden="true" />
         <svg viewBox="0 0 24 24" className="relative h-7 w-7" fill="currentColor" aria-hidden="true">
