@@ -130,13 +130,13 @@ export default function HomePage() {
             <div className="dot-grid-navy absolute -bottom-8 -right-4 h-40 w-48" aria-hidden="true" />
             <Photo
               src={images.aboutMain}
-              alt="Business team discussing a project around a meeting table"
+              alt="Consultant presenting to a team around a meeting table"
               width={1100}
               className="relative aspect-[4/5] w-[82%] rounded-3xl shadow-lift"
             />
             <Photo
               src={images.aboutSmall}
-              alt="Two colleagues reviewing information on a phone in an office"
+              alt="Team discussing a project in a modern office"
               width={700}
               className="absolute bottom-[-2rem] right-0 aspect-square w-[48%] rounded-3xl border-8 border-canvas shadow-lift"
             />
@@ -219,7 +219,7 @@ export default function HomePage() {
               <div className="absolute -bottom-5 -right-5 h-full w-full rounded-3xl bg-navy-50" aria-hidden="true" />
               <Photo
                 src={images.whyUs}
-                alt="Two colleagues planning together at a laptop"
+                alt="Consultant leading a planning session at a whiteboard"
                 width={1000}
                 className="relative aspect-[4/5] rounded-3xl"
               />

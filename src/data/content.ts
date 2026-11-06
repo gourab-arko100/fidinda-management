@@ -99,17 +99,16 @@ const u = (id: string) => `https://images.unsplash.com/${id}`;
 
 export const images = {
   heroCity: u("photo-1723358049559-4f98d449ab92"), // Phnom Penh skyline
-  /* People photos: Southeast Asian professionals (free Unsplash licence). */
-  aboutMain: u("photo-1754531976828-69e42ce4e0d9"), // Asian business team around a table — Gatot Adri
-  aboutSmall: u("photo-1577415124269-fc1140a69e91"), // two colleagues in a Kuala Lumpur office, Malaysia — Muhammad Faiz Zulkeflee
-  whyUs: u("photo-1681569685386-b7bda397672e"), // two colleagues working at a laptop — Thant Zin
-  cta: u("photo-1672917187338-7f81ecac3d3f"), // Indonesian team meeting in an office — Edi Kurniawan
+  aboutMain: u("photo-1542744173-8e7e53415bb0"), // presenting to colleagues
+  aboutSmall: u("photo-1758691737543-09a1b2b715fa"), // team meeting
+  whyUs: u("photo-1758873269013-d914addd5d3b"), // whiteboard session
+  cta: u("photo-1517048676732-d65bc937f952"), // meeting with pens
   resources: u("photo-1454165804606-c3d57bc86b40"), // documents & laptop
   contact: u("photo-1723358049559-4f98d449ab92"),
-  quote: u("photo-1665224751641-8ea911ca2267"), // businesswoman in a suit — Ky Nang
-  services: u("photo-1754531976828-69e42ce4e0d9"), // Asian business team — Gatot Adri
+  quote: u("photo-1758518729908-d4220a678d81"), // reviewing documents
+  services: u("photo-1758873269035-aae0e1fd3422"), // team at whiteboard
   vision: "/images/vision.jpg", // businesswoman with binoculars looking toward a stairway and open door
-  mission: u("photo-1672917187338-7f81ecac3d3f"), // Indonesian team meeting in an office — Edi Kurniawan
+  mission: "/images/mission.jpg", // Cambodian team planning around a laptop in a Phnom Penh office
 };
 
 /** Builds an optimised Unsplash URL (ignored for local /images files). */
@@ -316,7 +315,7 @@ export const services: Service[] = [
   },
   {
     slug: "contract-and-project-management",
-    image: "https://images.unsplash.com/photo-1681569685386-b7bda397672e", // colleagues planning at a laptop — Thant Zin
+    image: "https://images.unsplash.com/photo-1758691736872-61a1f75fe2d5",
     title: "Contract & Project Management",
     navTitle: "Contract & Project Management",
     icon: "clipboard",
@@ -608,7 +607,7 @@ export const services: Service[] = [
   },
   {
     slug: "training-and-capacity-building",
-    image: "https://images.unsplash.com/photo-1646579886135-068c73800308", // facilitator presenting to a group — Herlambang Tinasih Gusti
+    image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655",
     title: "Training & Capacity Building",
     navTitle: "Training & Capacity Building",
     icon: "graduation",

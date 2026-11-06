@@ -32,7 +32,7 @@ export default function AboutPage() {
               <div className="absolute -left-4 -top-4 h-32 w-32 rounded-3xl bg-navy-50" aria-hidden="true" />
               <Photo
                 src={images.aboutSmall}
-                alt="Two colleagues reviewing information on a phone in an office"
+                alt="Fidinda consultants in a team meeting"
                 width={900}
                 className="relative aspect-[4/5] rounded-3xl shadow-lift"
               />
@@ -80,7 +80,7 @@ export default function AboutPage() {
         <div className="container space-y-20 lg:space-y-28">
           {[
             { title: "Our Vision", text: about.missionVision.vision, image: images.vision, alt: "Businesswoman looking through binoculars toward a stairway leading to an open door", Icon: Eye },
-            { title: "Our Mission", text: about.missionVision.mission, image: images.mission, alt: "Team of professionals in a meeting discussing work", Icon: Target },
+            { title: "Our Mission", text: about.missionVision.mission, image: images.mission, alt: "Cambodian team discussing a strategy on a laptop in a Phnom Penh office", Icon: Target },
           ].map(({ title, text, image, alt, Icon }, i) => {
             const flip = i % 2 === 1;
             return (
