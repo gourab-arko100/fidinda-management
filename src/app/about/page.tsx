@@ -33,8 +33,8 @@ export default function AboutPage() {
               <Photo
                 src={images.aboutSmall}
                 alt="Fidinda consultants in a team meeting"
-                width={900}
-                className="relative aspect-[4/5] rounded-3xl shadow-lift"
+                width={1200}
+                className="relative aspect-[3/2] rounded-3xl shadow-lift"
               />
               <div className="absolute -bottom-6 right-6 rounded-2xl bg-navy px-6 py-5 text-white shadow-lift">
                 <p className="text-3xl font-extrabold">
